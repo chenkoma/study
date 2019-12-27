@@ -3,6 +3,14 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean>
+    <bean id="zhangsan" class="com.chen.demo.aware.User">
+        <property name="name" value="zhangsan"></property>
+        <property name="address" value="火星"></property>
+    </bean>
+
+    <bean id="lisi" class="com.chen.demo.aware.User2">
+        <property name="name" value="lisi"></property>
+        <property name="address" value="火星"></property>
+    </bean>
 
 </beans>

@@ -12,8 +12,8 @@ public class User implements BeanNameAware {
     private String address;
 
     @Override
-    public void setBeanName(String s) {
-
+    public void setBeanName(String beanName) {
+        id = beanName;
     }
 
     public String getId() {
