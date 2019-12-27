@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="FileNameGenerator" class="com.shiyanlou.spring.bean.FileNameGenerator">
+        <property name="name">
+            <value>zoeychou</value>
+        </property>
+        <property name="type">
+            <value>txt</value>
+        </property>
+    </bean>
+
+    <!--
+     <bean id="FileNameGenerator" class="com.shiyanlou.spring.bean.FileNameGenerator">
+          <property name="name" value="shiyanlou"/>
+          <property name="type" value="txt"/>
+     </bean>
+     -->
+
+    <bean name="user" class="com.shiyanlou.spring.bean.User">
+        <property name="name">
+            <value>小强</value>
+        </property>
+        <!--在user中引用user2中的bean-->
+        <property name="user2" ref="user2"></property>
+        <!--
+            注意虽然name和ref值相同，但是name代表user下有一个user2的属性，
+            这个属性的值是一个引用（已经配置过），这儿代表就是下面的bean。这
+            里就体现了spring框架对bean之间关系的处理。
+        -->
+    </bean>
+    <!--id名一般为类名的小写，bean之间的id不可重复-->
+    <bean id="user2" class="com.shiyanlou.spring.bean.User2">
+        <property name="name" value="sjt"/>
+    </bean>
+
+    <bean id="changeLetter" class="com.nuc.LowerLetter">
+        <property name="str" value="SJT"/>
+    </bean>
+    <!--scope="singleton-->
+    <bean id="student" class="com.nuc.Student" scope="prototype">
+        <property name="name" value="Chen"></property>
+    </bean>
+
+
+    <bean id="zoo" class="com.shiyanlou.spring.annotation.Zoo">
+        <property name="tiger" ref="tiger"/>
+        <property name="monkey" ref="monkey"/>
+    </bean>
+
+    <bean id="tiger" class="com.shiyanlou.spring.annotation.Tiger"/>
+    <bean id="monkey" class="com.shiyanlou.spring.annotation.Monkey"/>
+
+    <bean id="personService" init-method="init" destroy-method="destroy" scope="singleton" class="com.nuc.BeanLife.PersonService">
+        <property name="name" value="sjt"></property>
+    </bean>
+
+    <bean id="personService2" class="com.nuc.BeanLife.PersonService">
+        <property name="name" value="sjt2"></property>
+    </bean>
+    <!--配置自已的后置处理器，优点类似filter-->
+    <bean id="myBeanPostProcessor" class="com.nuc.BeanLife.MyBeanPostProcessor"></bean>
+
+</beans>

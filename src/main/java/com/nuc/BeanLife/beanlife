@@ -1,0 +1,2 @@
+1、实例化
+    当加载spring-config.xml文件时，bean就会被实例化
