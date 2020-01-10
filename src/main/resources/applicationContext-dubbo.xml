@@ -7,8 +7,10 @@
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd
         ">
 
+    <!--消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样-->
     <dubbo:application name="hehe_consumer"/>
+    <!--使用zookeeper注册中心暴露服务地址-->
     <dubbo:registry address="zookeeper://127.0.0.1:2180"/>
     <!--生成远程服务代理，可以像使用本地bean一样使用demoService-->
-    <dubbo:reference interface="com.chen.demo.dubbo.provider.DemoService"/>
+    <dubbo:reference id="demoService" interface="com.chen.demo.dubbo.provider.DemoService"/>
 </beans>
