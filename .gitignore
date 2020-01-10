@@ -19,4 +19,5 @@ logs/*
 *.iws
 .jde*
 /lib/
+.idea/workspace.xml
 
