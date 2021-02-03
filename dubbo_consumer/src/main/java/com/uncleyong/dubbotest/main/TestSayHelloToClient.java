@@ -4,8 +4,7 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.uncleyong.dubbotest.service.SayHelloToClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+
 import org.testng.annotations.Test;
 
 import java.util.Scanner;

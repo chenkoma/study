@@ -17,9 +17,9 @@
                 <property name="password" value="12345678" />
             </dataSource>
 
-            <mappers>
-                <mapper resource="User.xml" />
-            </mappers>
         </environment>
     </environments>
+    <mappers>
+        <mapper resource="UserMpper.xml" />
+    </mappers>
 </configuration>

@@ -5,11 +5,11 @@
 <!-- namespace：命名空间，用于隔离sql,
 命名空间 user.findUserById
 -->
-<mapper namespace="user">
+<mapper namespace="com.chen.dao.UserMapper">
     <!-- 通过ID查询一个用户
      id名字，namespace+id用来定位具体的sql   parameterType：参数类型   resultType：返回值，如果bean与数据库一一对应，则会自动映射   where id=#{v}，#{} 占位符，里面要写一个任意字符
     -->
-    <select id="findUserById" parameterType="Integer" resultType="com.chen.demo.mybatis.User">
-    select * from t_user where id=#{v}
+    <select id="findUserById" parameterType="Integer" resultType="com.chen.domain.User">
+    select * from xtb where user_id = #{id}
 </select>
 </mapper>
