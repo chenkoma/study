@@ -2,14 +2,19 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="study" />
         <module name="coco" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="dubbo-common" target="7" />
+      <module name="dubbo_consumer" target="7" />
+      <module name="dubbo_provider" target="7" />
       <module name="testpsk" target="7" />
       <module name="testtlspsk" target="7" />
     </bytecodeTargetLevel>
