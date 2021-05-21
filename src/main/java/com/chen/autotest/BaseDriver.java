@@ -11,40 +11,34 @@ import org.testng.annotations.*;
 public class BaseDriver {
     public WebDriver driver;
 
-//    public WebDriver GetDriver() {
-//        return driver;
-//    }
+    public WebDriver getDriver() {
+        return driver;
+    }
 
 //    @Test
 //    public void openExplorer() {}
 
     @BeforeClass
-    public void testbeforeclass(){
+    public void testBeforeClass() {
         System.out.println("before class---- called");
         SelectDriver select = new SelectDriver();
         driver = select.driverSelect("Chrome");
         driver.manage().window().maximize();
-
-        System.out.println("    选择chrome驱动");
-        System.out.println("    窗口最大化");
-
     }
 
     @BeforeMethod
-    public void testbeforemethod() {
+    public void testBeforeMethod() {
         System.out.println("before method ------ called");
-
     }
 
     @AfterClass
-    public void testafterclass() {
+    public void testAfterClass() {
         System.out.println("after class ------ called");
         driver.close();
-        System.out.println("    流览器关闭");
     }
 
     @AfterMethod
-    public void testaftermethod() {
+    public void testAfterMethod() {
         System.out.println("after method ------- called");
         //driver.close();
     }
